@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Animação do Quadrado</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script>
+</head>
+
+<body>
+
+<main>
+
+    <div style="display:block; width: 50px; height: 50px; background-color: purple; position: relative;" id="quadrado" >
+    </div>
+
+    <script type="text/javascript">
+
+        aumentar(); //chama a função
+        function aumentar() //cria a função
+        {
+            $('#quadrado').animate({
+            height: '+=150px',
+            width: '+=150px'
+        },{
+            complete: diminuir, //chama a outra função escolhida
+            duration: 3000 }); }
+      
+        function diminuir(){
+        $('#quadrado').animate({
+            height: '-=150px',
+            width: '-=150px'
+        } , {  
+          complete: aumentar,
+          duration: 3000}
+        ); }
+       
+    </script>
+
+
+</main>
+
+<footer> 
+</footer>
+
+</body> 
+</html>
